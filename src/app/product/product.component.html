@@ -1,0 +1,46 @@
+<!-- <div class="container mb-5">
+  <div class="row text-center mb-5">
+    <div class="col-lg-6">
+      <h1>Filter</h1>
+      <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+          (click)="doFilter('Mobile')">
+        <label class="btn btn-outline-primary" for="btnradio1">Mobile</label>
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
+          (click)="doFilter('TV')">
+        <label class="btn btn-outline-primary" for="btnradio2">TV</label>
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
+          (click)="doFilter('AC')">
+        <label class="btn btn-outline-primary" for="btnradio3">AC</label>
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off"
+          (click)="doFilter('All')">
+        <label class="btn btn-outline-primary" for="btnradio4">ALL</label>
+
+
+
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <h1>Search</h1>
+      <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Search Product" aria-label="Username"
+          aria-describedby="addon-wrapping" [(ngModel)]="search_by_value">
+      </div>
+    </div>
+  </div> -->
+
+<div class="row">
+  <div class="card col-lg-4 m-2" style="width: 18rem;" *ngFor="let product of all_products">
+    <img [src]="product.thumbnail" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Title : {{product.title | titlecase}}</h5>
+      <h5 class="card-title">Price : {{product.price | currency:"INR"}}</h5>
+      <h5 class="card-title">Category : {{product.category}}</h5>
+      <h5 class="card-title">Brand : {{product.brand}}</h5>
+      <a href="#" class="btn btn-primary m-2">Buy</a>
+      <a href="#" class="btn btn-warning ">Add to Cart</a>
+    </div>
+  </div>
+
+</div>
